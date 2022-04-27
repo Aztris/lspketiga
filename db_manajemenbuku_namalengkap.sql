@@ -17,9 +17,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `db_manajemenbuku_namalengkap`
---
 
 -- --------------------------------------------------------
 
@@ -28,7 +25,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `pengguna` (
-  `id_user` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nama` varchar(50) NOT NULL,
   `sandi` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -47,7 +44,7 @@ INSERT INTO `pengguna` (`id_user`, `nama`, `sandi`) VALUES
 --
 
 CREATE TABLE `t_buku` (
-  `id_buku` varchar(5) NOT NULL,
+  `id_buku` varchar(5) NOT NULL PRIMARY KEY,
   `judul_buku` varchar(50) NOT NULL,
   `jumlah_buku` int(11) NOT NULL,
   `pengarang` varchar(30) NOT NULL,
@@ -63,15 +60,6 @@ CREATE TABLE `t_buku` (
 
 --
 -- Indeks untuk tabel `pengguna`
---
-ALTER TABLE `pengguna`
-  ADD PRIMARY KEY (`id_user`);
-
---
--- Indeks untuk tabel `t_buku`
---
-ALTER TABLE `t_buku`
-  ADD PRIMARY KEY (`id_buku`);
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
